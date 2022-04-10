@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 
 class NavButton extends Component {
-    constructor(props) {
-        super(props);
-    }
     state = {
         name: this.props.name,
         selected: this.props.selected

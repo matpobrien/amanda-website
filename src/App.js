@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className="root">
         <div className="heroImage">
-          <img src="../public/download.jpeg" />
+          <img src="../public/download.jpeg" alt="stock life coach"/>
         </div>
         <p>{currentSection}</p>
         <Navigation

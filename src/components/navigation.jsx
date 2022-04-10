@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import NavButton from "./NavButton";
 
 class Navigation extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     setDisplay =(childSection) => {
         this.props.parentCallback(childSection)
     };
