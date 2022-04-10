@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Navigation from './components/navigation';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends Component {
+  state = {
+    currentSection: 'About'
+  }
+
+  setSection = (childSelection) => {
+    if (this.currentSection === childSelection) return;
+    this.setState({currentSection: childSelection})
+  }
+
+  render () {
+    const {currentSection} = this.state;
+    return (
+      <div className="root">
+        <div className="heroImage">
+          <img src="../public/download.jpeg" />
+        </div>
+        <p>{currentSection}</p>
+        <Navigation
+          parentCallback={this.setSection}
+          currentDisplay={currentSection}
+        />
+      </div>
+    );
+  }
+};
 
 export default App;
