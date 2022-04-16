@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from '@mui/material/Button';
 
 class NavButton extends Component {
     state = {
@@ -12,11 +13,11 @@ class NavButton extends Component {
     render() {
         return (
             <div className="navButton">
-                <button
+                <Button
                     onClick={this.onSelection}
                     className={this.state.selected === true ? 'bolded' : ''}>
                         {this.state.name}
-                </button>
+                </Button>
             </div>
             );
     }

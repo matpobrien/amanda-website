@@ -1,31 +1,33 @@
-import React, { Component } from 'react';
-import Navigation from './components/navigation';
+import React, { Component } from "react";
+import Navigation from "./components/navigation";
 
 class App extends Component {
   state = {
-    currentSection: 'About'
-  }
+    currentSection: "About",
+  };
 
   setSection = (childSelection) => {
     if (this.currentSection === childSelection) return;
-    this.setState({currentSection: childSelection})
-  }
+    this.setState({ currentSection: childSelection });
+  };
 
-  render () {
-    const {currentSection} = this.state;
+  render() {
+    const { currentSection } = this.state;
     return (
       <div className="root">
         <div className="heroImage">
-          <img src="../public/download.jpeg" alt="stock life coach"/>
+          <img src="../public/download.jpeg" alt="stock life coach" />
         </div>
         <p>{currentSection}</p>
-        <Navigation
-          parentCallback={this.setSection}
-          currentDisplay={currentSection}
-        />
+        <div className="Sections">
+          <Navigation
+            parentCallback={this.setSection}
+            currentDisplay={currentSection}
+          />
+        </div>
       </div>
     );
   }
-};
+}
 
 export default App;
