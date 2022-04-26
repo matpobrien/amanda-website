@@ -3,9 +3,6 @@ import React, { Component } from "react";
 import NavButton from "./NavButton";
 
 class Navigation extends Component {
-  state = {
-    sections: ["About", "Coaching", "FAQ", "Contact"],
-  };
   render() {
     const props = this.props;
     function setDisplay(childSection) {
@@ -14,12 +11,12 @@ class Navigation extends Component {
     return (
       <ButtonGroup className="navigation" variant="text">
         {
-          (this.sectionMenu = this.state.sections.map(function(section, index) {
+          (this.sectionMenu = this.props.sections.map(function(section, index) {
             return (
               <NavButton
                 key={index}
                 parentCallback={setDisplay}
-                name={section}
+                name={section.name}
                 selected={props.currentDisplay}
               />
             );

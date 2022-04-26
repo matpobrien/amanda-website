@@ -1,30 +1,34 @@
+// import { createTheme } from "@mui/system";
 import React, { Component } from "react";
-import Navigation from "./components/navigation";
+import SectionTabs from "./components/Sections";
+// import { ThemeProvider } from "@mui/private-theming";
 
+// const theme = createTheme({
+//   typography: {
+//     fontFamily: "Red Hat Display",
+//   },
+//   components: {
+//     MuiCssBaseline: {
+//       styleOverides: `
+//       @font-face {
+//         font-family: 'Red Hat Display';
+//         font-style: normal;
+//         font-display: swap;
+//         font-weight: 400;
+//         src: url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300&display=swap');
+//         unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
+//       }`,
+//     },
+//   },
+// });
 class App extends Component {
-  state = {
-    currentSection: "About",
-  };
-
-  setSection = (childSelection) => {
-    if (this.currentSection === childSelection) return;
-    this.setState({ currentSection: childSelection });
-  };
-
   render() {
-    const { currentSection } = this.state;
     return (
       <div className="root">
         <div className="heroImage">
           <img src="../public/download.jpeg" alt="stock life coach" />
         </div>
-        <p>{currentSection}</p>
-        <div className="Sections">
-          <Navigation
-            parentCallback={this.setSection}
-            currentDisplay={currentSection}
-          />
-        </div>
+        <SectionTabs></SectionTabs>
       </div>
     );
   }
